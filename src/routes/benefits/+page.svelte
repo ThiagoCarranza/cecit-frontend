@@ -1,6 +1,10 @@
 <script>
-  import BenefitCard from '$lib/components/BenefitCard.svelte';
-  import { benefits } from '$lib/data/benefits';
+  import './page.css';
+
+  import BenefitCard from '$lib/components/benefits/BenefitCard.svelte';
+  import { getBenefits } from '$lib/api/benefits';
+
+  const benefits = getBenefits();
 </script>
 
 <section class="benefits-page">
@@ -16,54 +20,3 @@
     {/each}
   </div>
 </section>
-
-<style>
-  .benefits-page {
-    width: 100%;
-    max-width: 1200px;
-
-    margin: auto;
-
-    padding: 50px 20px;
-  }
-
-  .top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    gap: 20px;
-  }
-
-  input {
-    width: 300px;
-
-    padding: 14px;
-
-    border-radius: 10px;
-    border: 1px solid #ccc;
-  }
-
-  .grid {
-    margin-top: 40px;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-
-  @media (max-width: 900px) {
-    .top {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    input {
-      width: 100%;
-    }
-
-    .grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>

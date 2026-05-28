@@ -1,0 +1,325 @@
+/*
+  BenefitCard.css
+  Card individual de beneficio.
+
+  Que tocar aca:
+  - .card y .compact-card controlan el estado normal.
+  - .expanded-* controla el modal que aparece en desktop.
+  - @media max-width 640px define la version compacta mobile.
+*/
+
+.benefit-card.card {
+  position: relative;
+  z-index: 1;
+
+  background: #f4f5f7;
+  border: 1px solid #2b2b2b;
+  border-radius: 0;
+  overflow: visible;
+
+  box-shadow: none;
+
+  transition:
+    box-shadow 0.25s ease;
+}
+
+.benefit-card.card:hover,
+.benefit-card.card:focus-within {
+  z-index: 100;
+}
+
+.benefit-card .compact-card {
+  overflow: hidden;
+}
+
+.benefit-card .compact-card > img {
+  width: 100%;
+  height: 174px;
+  object-fit: cover;
+
+  display: block;
+}
+
+.benefit-card .content {
+  padding: 8px 10px 14px;
+}
+
+.benefit-card .title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.benefit-card h2 {
+  margin: 0;
+  color: #050505;
+
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.benefit-card .bottom {
+  margin-top: 8px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.benefit-card .business {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.benefit-card .business img {
+  width: 24px;
+  height: 24px;
+
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.benefit-card p {
+  margin: 0;
+
+  color: #151535;
+
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.3px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.benefit-card button {
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.benefit-card .info-btn {
+  min-width: max-content;
+
+  padding: 6px 13px;
+
+  border: 1px solid #c4c7cf;
+  border-radius: 999px;
+
+  background: transparent;
+  color: #8a8d95;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.benefit-card .coupon-btn {
+  min-width: max-content;
+
+  background: #19194f;
+  color: white;
+
+  border-radius: 999px;
+
+  padding: 8px 18px;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.benefit-card .expanded-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  padding: 42px;
+
+  background: rgba(238,240,243,0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.18s ease,
+    visibility 0.18s ease;
+}
+
+.benefit-card .expanded-backdrop.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.benefit-card .expanded-card {
+  width: min(980px, calc(100vw - 84px));
+  height: min(560px, calc(100vh - 84px));
+
+  background: #f4f5f7;
+  border: 1px solid #7f8188;
+
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+
+  transform: translateY(12px) scale(0.985);
+  transition: transform 0.18s ease;
+
+  position: relative;
+}
+
+.benefit-card .expanded-backdrop.visible .expanded-card {
+  transform: translateY(0) scale(1);
+}
+
+.benefit-card .close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 2;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid #c7c9cf;
+  border-radius: 50%;
+
+  background: rgba(244,245,247,0.9);
+  color: #151535;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefit-card .expanded-info {
+  min-width: 0;
+  padding: 54px 48px 38px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.benefit-card .expanded-info h3 {
+  max-width: 430px;
+  margin: 0;
+
+  color: #050505;
+
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.benefit-card .expanded-info p {
+  margin-top: 12px;
+
+  color: #050505;
+
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.benefit-card .expanded-info .coupon-btn {
+  margin-top: auto;
+  width: auto;
+  padding: 10px 26px;
+}
+
+.benefit-card .expanded-preview {
+  border-left: 1px solid #7f8188;
+  background: #f4f5f7;
+}
+
+.benefit-card .expanded-preview img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 640px) {
+  .benefit-card.card {
+    background: #fff;
+  }
+
+  .benefit-card .compact-card > img {
+    height: 145px;
+  }
+
+  .benefit-card .content {
+    padding: 10px 12px 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .benefit-card .title-row {
+    display: contents;
+  }
+
+  .benefit-card h2 {
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+    font-size: 20px;
+    line-height: 1.05;
+    white-space: nowrap;
+  }
+
+  .benefit-card .bottom {
+    display: contents;
+  }
+
+  .benefit-card .business {
+    order: 2;
+    width: 100%;
+  }
+
+  .benefit-card p {
+    font-size: 15px;
+  }
+
+  .benefit-card .info-btn {
+    order: 3;
+  }
+
+  .benefit-card .info-btn,
+  .benefit-card .coupon-btn {
+    width: auto;
+    min-width: 0;
+    padding: 8px 13px;
+    font-size: 13px;
+  }
+
+  .benefit-card .coupon-btn {
+    order: 4;
+    margin-left: auto;
+  }
+
+  .benefit-card .expanded-backdrop {
+    display: none;
+  }
+}

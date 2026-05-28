@@ -1,0 +1,140 @@
+/*
+  Footer.css
+  Pie global del sitio.
+
+  Que tocar aca:
+  - footer define fondo, color y alto del bloque.
+  - .brand agrupa logo + datos de contacto.
+  - .support agrupa logos de paseos/respaldo.
+*/
+
+footer {
+  margin-top: 0;
+  padding: 46px 20px 42px;
+  min-height: 190px;
+
+  background: #151532;
+  color: white;
+}
+
+footer .inner {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 96px;
+}
+
+footer .brand {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+footer .cecit-logo {
+  width: 168px;
+  height: auto;
+  display: block;
+}
+
+footer .contact {
+  padding-top: 22px;
+}
+
+footer .contact p {
+  margin: 0 0 6px;
+
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+footer .support {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+footer .parks-logo,
+footer .backers-logo {
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+footer .parks-logo {
+  width: 150px;
+}
+
+footer .backers-logo {
+  width: 210px;
+}
+
+/* Mobile/tablet: footer en columna para que no se aplasten los logos. */
+@media (max-width: 820px) {
+  footer {
+    padding: 34px 24px 38px;
+  }
+
+  footer .inner,
+  footer .brand,
+  footer .support {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  footer .brand img {
+    width: 136px;
+  }
+
+  footer .contact {
+    padding-top: 0;
+  }
+
+  footer .support {
+    gap: 28px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  footer .parks-logo {
+    width: 128px;
+  }
+
+  footer .backers-logo {
+    width: 178px;
+  }
+}
+
+@media (max-width: 520px) {
+  footer {
+    padding: 30px 22px 34px;
+  }
+
+  footer .contact p {
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  footer .support {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 18px;
+  }
+
+  footer .cecit-logo {
+    width: 156px;
+  }
+
+  footer .parks-logo,
+  footer .backers-logo {
+    width: 100%;
+    max-width: 170px;
+  }
+}

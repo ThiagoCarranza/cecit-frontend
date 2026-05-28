@@ -1,0 +1,10 @@
+/*
+  layout.css
+  Estilos del layout global.
+
+  main envuelve el contenido de cada pagina entre Navbar y Footer.
+*/
+
+main {
+    flex: 1;
+}

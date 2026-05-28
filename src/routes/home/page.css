@@ -1,0 +1,10 @@
+/*
+  home/page.css
+  Estilos generales de /home.
+
+  La mayor parte del diseño de home vive en componentes dentro de lib/components/home.
+*/
+
+.home-page {
+  padding-bottom: 50px;
+}

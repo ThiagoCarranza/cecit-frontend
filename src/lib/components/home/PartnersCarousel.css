@@ -1,0 +1,135 @@
+/*
+  PartnersCarousel.css
+  Carrusel automatico de socios.
+
+  Que tocar aca:
+  - .track controla el movimiento automatico.
+  - .partner-card controla el ancho de cada socio.
+  - @keyframes partners-scroll define la animacion horizontal.
+*/
+
+.partners {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: auto;
+  margin-top: 66px;
+
+  overflow: hidden;
+}
+
+.partners h2 {
+  margin: 0;
+
+  color: #050505;
+
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.partners .carousel {
+  margin-top: 28px;
+  width: 100%;
+
+  overflow: hidden;
+}
+
+.partners .track {
+  width: max-content;
+
+  display: flex;
+  align-items: center;
+  gap: 52px;
+
+  animation: partners-scroll 24s linear infinite;
+}
+
+.partners .carousel:hover .track {
+  animation-play-state: paused;
+}
+
+.partners .partner-card {
+  width: 110px;
+  flex: 0 0 auto;
+
+  text-align: center;
+}
+
+.partners img {
+  width: 86px;
+  height: 86px;
+
+  object-fit: cover;
+  border-radius: 50%;
+
+  background: white;
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.12);
+}
+
+.partners p {
+  margin: 10px 0 0;
+
+  color: #151535;
+
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+@keyframes partners-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .partners {
+    padding: 0 12px;
+    margin-top: 58px;
+  }
+
+  .partners h2 {
+    font-size: 28px;
+  }
+
+  .partners .track {
+    gap: 34px;
+    animation-duration: 18s;
+  }
+
+  .partners .partner-card {
+    width: 116px;
+  }
+
+  .partners img {
+    width: 104px;
+    height: 104px;
+  }
+
+  .partners p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 420px) {
+  .partners .track {
+    gap: 28px;
+  }
+
+  .partners .partner-card {
+    width: 104px;
+  }
+
+  .partners img {
+    width: 92px;
+    height: 92px;
+  }
+}

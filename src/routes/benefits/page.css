@@ -1,0 +1,56 @@
+/*
+  benefits/page.css
+  Estilos de la pagina "Todos los beneficios".
+
+  Esta pagina reutiliza BenefitCard, por eso los estilos de la card estan en
+  lib/components/benefits/BenefitCard.css.
+*/
+
+.benefits-page {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 50px 20px;
+}
+
+.benefits-page .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.benefits-page input {
+  width: 300px;
+
+  padding: 14px;
+
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.benefits-page .grid {
+  margin-top: 40px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .benefits-page .top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .benefits-page input {
+    width: 100%;
+  }
+
+  .benefits-page .grid {
+    grid-template-columns: 1fr;
+  }
+}

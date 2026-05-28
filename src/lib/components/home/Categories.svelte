@@ -8,8 +8,10 @@
   import './Categories.css';
 
   import { onMount } from 'svelte';
-  import { categories } from '$lib/data/categories';
+  import { getCategories } from '$lib/api/categories';
   import { ChevronLeft, ChevronRight } from 'lucide-svelte';
+
+  const categories = getCategories();
 
   const LOOP_COPIES = 33;
   const START_COPY = 16;
